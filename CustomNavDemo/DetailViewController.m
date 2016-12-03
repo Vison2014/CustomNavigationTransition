@@ -52,7 +52,7 @@
 {
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:
-//            self.transition.interactive = true;
+            self.transition.interactive = true;
             [self handleButtonTapped];
             break;
         default:

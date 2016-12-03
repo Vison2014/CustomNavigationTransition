@@ -18,7 +18,7 @@
 
 
 
-//@property(nonatomic, assign) BOOL interactive;
+@property(nonatomic, assign) BOOL interactive;
 
 - (void)handlePan:(UIPanGestureRecognizer *)pan;
 

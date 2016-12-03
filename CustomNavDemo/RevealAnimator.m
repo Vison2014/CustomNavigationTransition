@@ -91,7 +91,7 @@
             }else{
                 [self finishInteractiveTransition];
             }
-//            self.interactive = false;
+            self.interactive = false;
         }
             
             break;

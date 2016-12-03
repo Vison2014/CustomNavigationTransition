@@ -56,7 +56,7 @@
 {
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:
-//            self.transition.interactive = true;
+            self.transition.interactive = true;
             [self handleButtonTapped];
             break;
         default:
@@ -76,9 +76,9 @@
 
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
-//    if (!self.transition.interactive) {
-//        return nil;
-//    }
+    if (!self.transition.interactive) {
+        return nil;
+    }
     return self.transition;
 }
 
