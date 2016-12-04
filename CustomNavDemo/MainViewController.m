@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "DetailViewController.h"
-
+#import "TestViewController.h"
 
 @interface MainViewController ()<UINavigationControllerDelegate>
 
@@ -16,10 +16,10 @@
 
 @implementation MainViewController
 
-- (RevealAnimator *)transition {
+- (SLTransitionAnimator *)transition {
     
     if (_transition == nil) {
-        _transition = [[RevealAnimator alloc] init];
+        _transition = [[SLTransitionAnimator alloc] init];
     }
     
     return _transition;
@@ -30,21 +30,40 @@
     
     self.title = @"首页";
     self.view.backgroundColor = [UIColor redColor];
-    self.navigationController.delegate = self;
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 200, 60)];
     [button setBackgroundColor:[UIColor greenColor]];
     [button setTitle:@"点我" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(handleButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    
+    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(30, 200, 200, 60)];
+    [button2 setBackgroundColor:[UIColor greenColor]];
+    [button2 setTitle:@"另外一个控制器" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(pushTestVC) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
     [self.view addGestureRecognizer:pan];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.delegate = self;
+}
+
+- (void)pushTestVC {
+    
+    TestViewController *vc = [[TestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)handleButtonTapped {
@@ -70,10 +89,15 @@
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC {
     
-    self.transition.operation = operation;
-    return self.transition;
+    
+    if ([toVC isKindOfClass:[DetailViewController class]] || [fromVC isKindOfClass:[DetailViewController class]]) {
+        self.transition.operation = operation;
+        return self.transition;
+    }
+    self.navigationController.delegate = nil;
+    return nil;
+    
 }
-
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
     if (!self.transition.interactive) {

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RevealAnimator.h"
+#import "SLTransitionAnimator.h"
 
 @interface MainViewController : UIViewController
 
 /** transition */
-@property (strong ,nonatomic) RevealAnimator *transition;
+@property (strong ,nonatomic) SLTransitionAnimator *transition;
 @end
 

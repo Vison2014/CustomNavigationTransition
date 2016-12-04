@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CED3C2671DF31B4D00B84663 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED3C2661DF31B4D00B84663 /* TestViewController.m */; };
 		CED44C091DF2697E000FC1A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C081DF2697E000FC1A9 /* main.m */; };
 		CED44C0C1DF2697E000FC1A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C0B1DF2697E000FC1A9 /* AppDelegate.m */; };
 		CED44C0F1DF2697E000FC1A9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C0E1DF2697E000FC1A9 /* MainViewController.m */; };
 		CED44C141DF2697E000FC1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED44C131DF2697E000FC1A9 /* Assets.xcassets */; };
 		CED44C171DF2697E000FC1A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED44C151DF2697E000FC1A9 /* LaunchScreen.storyboard */; };
 		CED44C201DF26A2C000FC1A9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C1F1DF26A2C000FC1A9 /* DetailViewController.m */; };
-		CED44C241DF26B5E000FC1A9 /* RevealAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C231DF26B5E000FC1A9 /* RevealAnimator.m */; };
+		CED44C241DF26B5E000FC1A9 /* SLTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44C231DF26B5E000FC1A9 /* SLTransitionAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CED3C2651DF31B4D00B84663 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		CED3C2661DF31B4D00B84663 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CED44C041DF2697E000FC1A9 /* CustomNavDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomNavDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED44C081DF2697E000FC1A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CED44C0A1DF2697E000FC1A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,8 +31,8 @@
 		CED44C181DF2697E000FC1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED44C1E1DF26A2C000FC1A9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		CED44C1F1DF26A2C000FC1A9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		CED44C221DF26B5E000FC1A9 /* RevealAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealAnimator.h; sourceTree = "<group>"; };
-		CED44C231DF26B5E000FC1A9 /* RevealAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealAnimator.m; sourceTree = "<group>"; };
+		CED44C221DF26B5E000FC1A9 /* SLTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTransitionAnimator.h; sourceTree = "<group>"; };
+		CED44C231DF26B5E000FC1A9 /* SLTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTransitionAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				CED44C0E1DF2697E000FC1A9 /* MainViewController.m */,
 				CED44C1E1DF26A2C000FC1A9 /* DetailViewController.h */,
 				CED44C1F1DF26A2C000FC1A9 /* DetailViewController.m */,
+				CED3C2651DF31B4D00B84663 /* TestViewController.h */,
+				CED3C2661DF31B4D00B84663 /* TestViewController.m */,
 				CED44C131DF2697E000FC1A9 /* Assets.xcassets */,
 				CED44C151DF2697E000FC1A9 /* LaunchScreen.storyboard */,
 				CED44C181DF2697E000FC1A9 /* Info.plist */,
@@ -88,8 +93,8 @@
 		CED44C211DF26B4A000FC1A9 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				CED44C221DF26B5E000FC1A9 /* RevealAnimator.h */,
-				CED44C231DF26B5E000FC1A9 /* RevealAnimator.m */,
+				CED44C221DF26B5E000FC1A9 /* SLTransitionAnimator.h */,
+				CED44C231DF26B5E000FC1A9 /* SLTransitionAnimator.m */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -165,9 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED3C2671DF31B4D00B84663 /* TestViewController.m in Sources */,
 				CED44C0F1DF2697E000FC1A9 /* MainViewController.m in Sources */,
 				CED44C0C1DF2697E000FC1A9 /* AppDelegate.m in Sources */,
-				CED44C241DF26B5E000FC1A9 /* RevealAnimator.m in Sources */,
+				CED44C241DF26B5E000FC1A9 /* SLTransitionAnimator.m in Sources */,
 				CED44C091DF2697E000FC1A9 /* main.m in Sources */,
 				CED44C201DF26A2C000FC1A9 /* DetailViewController.m in Sources */,
 			);

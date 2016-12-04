@@ -6,14 +6,14 @@
 //  Copyright © 2016 slpay. All rights reserved.
 //
 
-#import "RevealAnimator.h"
+#import "SLTransitionAnimator.h"
 
 
-@interface RevealAnimator()
+@interface SLTransitionAnimator()
 
 @end
 
-@implementation RevealAnimator
+@implementation SLTransitionAnimator
 
 - (instancetype)init {
     if (self = [super init]) {

@@ -7,11 +7,16 @@
 //
 
 #import "DetailViewController.h"
-#import "RevealAnimator.h"
+#import "SLTransitionAnimator.h"
 #import "MainViewController.h"
 
-@interface DetailViewController ()
-@property(nonatomic, weak) RevealAnimator *transition;
+@interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic, weak) SLTransitionAnimator *transition;
+
+/** xxx */
+@property (weak ,nonatomic) UITableView *tableView;
+
+
 @end
 
 @implementation DetailViewController
@@ -23,6 +28,13 @@
     self.title = @"详情";
     self.view.backgroundColor = [UIColor purpleColor];
     
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 200, 60)];
     [button setBackgroundColor:[UIColor greenColor]];
     [button setTitle:@"回去" forState:UIControlStateNormal];
@@ -33,7 +45,6 @@
     if (masterVc) {
         self.transition = masterVc.transition;
     }
-    
 }
 
 - (void)handleButtonTapped {
@@ -58,6 +69,42 @@
         default:
             [self.transition handlePan:pan];
             break;
+    }
+}
+
+
+
+#pragma mark - tableView的数据源和代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellID = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"😁😀😀哈哈%zd",indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y < -64) {
+        
     }
 }
 
